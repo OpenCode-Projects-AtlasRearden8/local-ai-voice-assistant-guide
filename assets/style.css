@@ -1,0 +1,156 @@
+/* The House Voice — site styles. Warm, readable, no tracking, no fonts to load. */
+
+:root {
+  --ink: #2d2a26;
+  --paper: #faf7f2;
+  --card: #ffffff;
+  --accent: #7a4a24;
+  --accent-soft: #f2e7db;
+  --line: #e6ded2;
+  --code-bg: #2e2b27;
+  --code-ink: #f3efe8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.65;
+  font-size: 17px;
+}
+
+main, header, footer {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 1.2rem;
+}
+
+main {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 2rem 2.2rem 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.site-header {
+  padding-top: 2.2rem;
+  padding-bottom: 1rem;
+}
+
+.kicker {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--accent);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.sub {
+  margin: 0.2rem 0 1rem;
+  font-style: italic;
+  color: #6b6459;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.86rem;
+}
+
+nav a {
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: #fff;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+nav a:hover { background: var(--accent-soft); }
+nav a.active { background: var(--accent); color: #fdf9f2; border-color: var(--accent); }
+
+h1, h2, h3, h4 {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.25;
+  color: #1f1c18;
+}
+
+h1 { font-size: 1.7rem; margin-top: 0; }
+h2 { font-size: 1.3rem; margin-top: 2rem; border-bottom: 2px solid var(--line); padding-bottom: 0.25rem; }
+h3 { font-size: 1.08rem; margin-top: 1.6rem; }
+
+a { color: var(--accent); }
+a:hover { color: #593418; }
+
+code {
+  font-family: "Cascadia Code", Consolas, "SF Mono", monospace;
+  font-size: 0.85em;
+  background: var(--accent-soft);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+pre {
+  background: var(--code-bg);
+  color: var(--code-ink);
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+
+blockquote {
+  margin: 1rem 0;
+  padding: 0.6rem 1rem;
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.2rem 0;
+  font-size: 0.92rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th { background: var(--accent-soft); }
+
+ul, ol { padding-left: 1.4rem; }
+li { margin: 0.3rem 0; }
+
+footer {
+  padding-bottom: 2.5rem;
+  color: #6b6459;
+  font-size: 0.85rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+footer p { margin: 0.3rem 0; }
+
+@media (max-width: 640px) {
+  main { padding: 1.3rem 1rem 2rem; }
+  body { font-size: 16px; }
+}

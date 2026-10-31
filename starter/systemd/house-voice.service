@@ -1,0 +1,19 @@
+# House Voice — run at login. Linux (systemd --user). See docs/08, Step 8.
+# Save as ~/.config/systemd/user/house-voice.service, then:
+#   systemctl --user daemon-reload && systemctl --user enable --now house-voice
+# (macOS and Windows equivalents are described in docs/08-two-evening-plan.md.)
+
+[Unit]
+Description=House Voice assistant (local, offline)
+After=graphical-session.target
+
+[Service]
+ExecStart=%h/house-voice-venv/bin/python %h/house-voice/household.py --listen
+WorkingDirectory=%h/house-voice
+Restart=on-failure
+RestartSec=5
+# OLLAMA_KEEP_ALIVE keeps the model warm so mornings aren't slow
+Environment=OLLAMA_KEEP_ALIVE=30m
+
+[Install]
+WantedBy=graphical-session.target
